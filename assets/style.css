@@ -108,11 +108,13 @@ body {
   margin-bottom: 15px;
 }
 
+/* Parágrafo principal centralizado e com quebras de linha respeitadas */
 .top-message p {
   font-size: 1.4rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  white-space: pre-line;
+  text-align: center;
+  white-space: pre-line; /* mantém as quebras de linha */
 }
 
 /* Subtítulo */
@@ -172,6 +174,15 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   font-family: 'Dancing Script', cursive;
   pointer-events: none;
+}
+
+/* Frase pequena (ex: Salmos 27:14) */
+.waiting-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 15px 0;
+  color: #444;
 }
 
 /* Botão */

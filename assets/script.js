@@ -6,16 +6,16 @@ const centralMessage = document.getElementById('centralMessage');
 const content = document.getElementById('content');
 
 const phrases = [
-  "Deus tem um plano perfeito para nós.",
-  "O amor é paciente e bondoso.",
-  "Tudo fez formoso em seu tempo.",
-  "Nunca perca a esperança.",
-  "Com fé, tudo é possível.",
-  "O amor é o elo perfeito.",
-  "Ore, confie e espere no Senhor.",
-  "Você é especial para mim.",
-  "Tudo que é de Deus floresce no tempo certo.",
-  "Que Deus abençoe nossa caminhada."
+  "Cânticos 4:7",
+  "1 Coríntios 13:4-7",
+  "Filipenses 1:3",
+  "Eclesiastes 3:11",
+  "Provérbios 31:10-12",
+  "1 Pedro 3:3-4",
+  "Hebreus 10:23",
+  "Provérbios 31:30",
+  "Salmos 46:5",
+  "Provérbios 3:15"
 ];
 
 let balloonInterval;
