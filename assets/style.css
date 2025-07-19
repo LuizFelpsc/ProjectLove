@@ -226,7 +226,7 @@ body {
     margin-bottom: 1px; /* reduz espaço abaixo da box */
   }
   .balloons-box {
-    height: 85%;
+    height: 90%;
   }
 }
 
@@ -250,7 +250,7 @@ body {
     margin-bottom: 1px; /* ainda mais próximo */
   }
   .balloons-box {
-    height: 80%;
+    height: 90%;
   }
   .waiting-text {
     margin-top: 3px;
