@@ -1,126 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(to bottom, #f3f0e7, #fffaf0);
 }
 
 body {
-  background: linear-gradient(to bottom, #f3f0e7, #fffaf0);
-  overflow: hidden;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: relative;
-  transition: transform 1s ease-in-out;
 }
 
-.letter {
-  width: 300px;
-  height: 200px;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 1s ease;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  overflow: hidden;
-}
-
-.letter:hover {
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-.letter.open {
-  width: 100vw;
-  height: 100vh;
-  border-radius: 0;
-  z-index: 50;
-  transform: translate(-50%, -50%) scale(1);
-}
-
+/* Texto clique para abrir */
 .letter-text {
-  font-size: 1.2rem;
-  text-align: center;
-  z-index: 5;
+  font-size: 2.8rem;
+  color: #444;
+  font-weight: 700;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+/* Carta */
+.letter {
+  width: 320px;
+  height: 200px;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: width 1s ease, height 1s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.letter.open .letter-text {
-  display: none;
+/* Carta aberta */
+.letter.open {
+  width: 800px;
+  height: 700px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: auto;
 }
 
-.content {
-  opacity: 0;
+/* Tampa da carta */
+.envelope-flap {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  padding: 0;
-  background-color: #fff;
-  overflow: hidden;
-  z-index: 1;
-  transition: opacity 1s ease-in-out;
+  height: 100px;
+  background: #f8d7da;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transition: transform 1s ease, opacity 0.5s ease;
+  z-index: 20;
+}
+
+.letter.open .envelope-flap {
+  opacity: 0;
   pointer-events: none;
+}
+
+/* Conteúdo */
+.content {
+  opacity: 0;
+  flex: 1;
+  padding: 30px 25px 15px 25px;
+  overflow-y: auto;
+  max-height: 100%;
+  transition: opacity 1s ease;
+}
+
+/* Scroll personalizado */
+.content::-webkit-scrollbar {
+  width: 10px;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: #ff6f61;
+  border-radius: 8px;
 }
 
 .letter.open .content {
   opacity: 1;
-  pointer-events: auto;
 }
 
-.section {
-  font-size: 1.1rem;
-  text-align: left;
+/* Título principal */
+.top-message h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
+.top-message p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+/* Subtítulo */
+.subtitle {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+/* Texto adicional */
+.extra-text {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Mensagem central */
+.central-message {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 30px 0;
+  text-align: center;
+}
+
+/* Área balões */
+.balloons-area {
+  position: relative;
+  height: 400px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.balloons-box {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  background: #fde2e4;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px dashed rgba(0, 0, 0, 0.15); /* Borda bonita */
+}
+
+/* Balões */
 .section.balloon {
   position: absolute;
-  max-width: 300px;
-  padding: 15px 20px;
-  background: #fff6f6;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  animation: float 6s ease-in-out infinite;
+  bottom: 0;
+  padding: 14px 24px;
+  border-radius: 30px;
+  background: #d8c8ff; /* Lilás pastel */
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transform: translateY(0);
+  transition: transform 10s linear, opacity 2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-family: 'Dancing Script', cursive;
+  pointer-events: none;
 }
 
-.letter.open .section.balloon {
-  opacity: 1;
+/* Botão */
+.reset-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 1.4rem;
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.section.balloon {
-  position: absolute;
-  max-width: 300px;
-  padding: 15px 20px;
-  background: #d3d3d3; /* cinza claro */
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  animation: float 6s ease-in-out infinite;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.letter.open .section.balloon {
-  opacity: 1;
+.reset-btn:hover {
+  background: #e55d50;
 }

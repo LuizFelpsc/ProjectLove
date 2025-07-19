@@ -5,18 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carta para Você</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container" id="container">
+  <div class="container">
+    <div class="letter-text" id="letterText">Clique para abrir</div>
+
     <div class="letter" id="letter">
-      <div class="letter-text" id="letterText">📜 Clique para abrir</div>
+      <div class="envelope-flap" id="envelopeFlap"></div>
+
       <div class="content" id="content">
-        <div class="section balloon"></div>
-        <div class="section balloon"></div>
-        <div class="section balloon"></div>
-        <div class="section balloon"></div>
-        <div class="section balloon"></div>
-        <div class="section balloon"></div> <!-- nova caixa -->
+        <!-- Mensagem inicial -->
+        <div class="top-message">
+          <h1>Para a fã de Superman</h1>
+          <p>
+            Esta carta foi escrita com carinho, oração e sinceridade.
+            Que cada palavra aqui encontre um lugar no seu coração.
+
+            Bom, você deve estar se perguntando qual é o objetivo desta carta. Porém, pode ficar tranquila: ela não é algo tão especial, apenas uma maneira de expressar um pouco do que sinto e também um lembrete de como você está se tornando cada vez mais especial na minha vida.
+
+            Você sabe que eu tenho muito interesse em você, mas isso não se deve exatamente à sua aparência, e sim por você ser quem é: uma menina incrível, temente a Deus, cheia do Espírito Santo, esforçada, estudiosa, educada, um pouco preguiçosa também, e com um coração lindo.
+
+            Devo confessar que você também é bem linda! Sabe, você já é tão completa e mesmo assim me deixou começar na sua vida, um homem que mal conhecia, que não é tão bonito assim, não é tão bom em se expressar, tímido, e mesmo vendo meus erros e defeitos, você me entendeu do jeito que sou e de certa forma me abraçou com o seu carinho.
+
+            Saiba que sou muito grato por isso e sempre serei. Então, resolvi fazer esta carta para tentar te agradar um pouco, já que todo dia você consegue me deixar feliz com as nossas conversas.
+
+            Enfim, escrevi algo de uma maneira um pouco clássica também porque sei que você gosta, e realmente espero que goste…
+          </p>
+        </div>
+
+        <!-- Novo título -->
+        <h2 class="subtitle">De coração para coração</h2>
+
+        <!-- Texto adicional atualizado -->
+        <p class="extra-text">
+          Há algo no seu olhar que parece conter o brilho sereno das manhãs mais belas, um reflexo de paz que acalma e inspira. Seus cabelos, como fios traçados com cuidado pelo próprio Criador, dançam suavemente ao vento como uma canção de doçura.<br><br>
+          E o seu sorriso… ah, o seu sorriso! Ele tem a força de transformar dias nublados em claros horizontes, um dom raro que ilumina não apenas o rosto, mas também o coração de quem tem a graça de vê-lo.<br><br>
+          Mas, acima de tudo, há algo em você que transcende a beleza visível: a sua fé. Essa chama que não se apaga, que se ergue firme diante das tempestades e resplandece como farol para quem deseja caminhar ao lado da vontade de Deus. É isso que torna tudo em você tão sublime, tão verdadeiro, tão único.<br><br>
+          E mesmo que você diga que é lenta com essas coisas, não se preocupe… Eu estarei aqui, esperando com paciência, pedindo a Deus todos os dias para que Ele te abençoe cada vez mais e nos conceda discernimento para lidar com cada passo, cada tempo, cada situação, segundo a Sua vontade.
+        </p>
+
+        <!-- Mensagem central -->
+        <div class="central-message" id="centralMessage">
+          Que esta carta toque seu coração como uma oração.
+        </div>
+
+        <!-- Área para os balões -->
+        <div class="balloons-area">
+          <div class="balloons-box" id="balloonsBox">
+            <div class="section balloon"></div>
+            <div class="section balloon"></div>
+            <div class="section balloon"></div>
+            <div class="section balloon"></div>
+            <div class="section balloon"></div>
+          </div>
+        </div>
+
+        <!-- Botão fechar carta -->
+        <button id="resetBtn" class="reset-btn">Fechar Carta</button>
       </div>
     </div>
   </div>
